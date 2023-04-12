@@ -1,15 +1,13 @@
 import Image from 'next/image';
-import { memo, useEffect, useState } from 'react';
+import { memo } from 'react';
 
 import shopIcon from '../../../public/icon/shop.svg';
 
+import { useInnerSize } from '@/hooks/useInnerSize';
+
 function _HeaderShopIcon() {
 
-    const [innerHeight, setInnerHeight] = useState(0);
-
-    useEffect(() => {
-        setInnerHeight(window.innerHeight);
-    }, [])
+    const { innerHeight } = useInnerSize();
 
     return (
         <>

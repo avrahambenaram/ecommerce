@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+
+import { useInnerSize } from '@/hooks/useInnerSize';
 
 export interface BannerProps {
     images: {
@@ -10,11 +11,7 @@ export interface BannerProps {
 
 export function Banner({ images }: BannerProps) {
 
-    const [innerWidth, setInnerWidth] = useState(0);
-
-    useEffect(() => {
-        setInnerWidth(window.innerWidth);
-    }, [])
+    const { innerWidth } = useInnerSize();
 
     return (
         <div
