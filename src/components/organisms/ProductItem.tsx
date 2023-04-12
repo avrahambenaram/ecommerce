@@ -7,14 +7,17 @@ export interface ProductItemProps {
 
 export function ProductItem({ product, onClick }: ProductItemProps) {
   return (
-    <button className='w-56 h-64' onClick={() => onClick ? onClick(product) : null}>
+    <button
+      className='w-56 h-64'
+      onClick={() => onClick ? onClick(product) : null}
+    >
       <div
-        className='w-full h-full shadow-inner hover:shadow-sm bg-white px-3 py-2 flex flex-col items-center'
+        className='w-full h-full shadow-inner hover:shadow-sm bg-white px-3 py-2 flex flex-col items-center rounded-md'
       >
         <Image
           src={product.image}
           alt={product.name}
-          className='w-auto max-w-full h-2/3'
+          className='w-auto max-w-full h-2/3 scale-75'
         />
         <div className='w-full flex flex-col justify-start items-start'>
           <h2>{product.name}</h2>
