@@ -8,9 +8,9 @@ export function useEcommerceUserAPI(ecommerceAPIMeta: IEcommerceAPIMeta): IEComm
       return 'jwt_token';
     } catch(err: any) {
       ecommerceAPIMeta.error = 'Error while signing in';
+      return 'failure';
     } finally {
       ecommerceAPIMeta.loading = false;
-      return '';
     }
   }
 
@@ -20,9 +20,9 @@ export function useEcommerceUserAPI(ecommerceAPIMeta: IEcommerceAPIMeta): IEComm
       return 'jwt_token';
     } catch(err: any) {
       ecommerceAPIMeta.error = 'Error while signing up';
+      return 'failure';
     } finally {
       ecommerceAPIMeta.loading = false;
-      return '';
     }
   }
 

@@ -1,9 +1,12 @@
 import Head from 'next/head';
 
 import { Header } from '../organisms/Header';
-import { SignInForm } from '../organisms/SignInForm';
+import { SignInForm, SignInFormProps } from '../organisms/SignInForm';
 
-export function SignInTemplate() {
+export interface SignInTemplateProps {
+  signInForm: SignInFormProps;
+}
+export function SignInTemplate({ signInForm }: SignInTemplateProps) {
   return (
     <>
       <Head>
@@ -13,7 +16,9 @@ export function SignInTemplate() {
       </Head>
       <Header/>
       <main className='w-full h-9/10 flex justify-center items-center'>
-        <SignInForm/>
+        <SignInForm
+          {...signInForm}
+        />
       </main>
     </>
   )
