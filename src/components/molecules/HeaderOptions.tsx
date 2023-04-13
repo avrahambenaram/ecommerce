@@ -8,7 +8,7 @@ export function HeaderOptions() {
             <HeaderOptionLi href='/bestsellers'>Mais vendido</HeaderOptionLi>
             <HeaderOptionLi href='/about'>Sobre</HeaderOptionLi>
             <HeaderOptionLi href='/whoweare'>Quem somos</HeaderOptionLi>
-            <HeaderOptionLi href='/login'>Entrar</HeaderOptionLi>
+            <HeaderOptionLi href='/signin'>Entrar</HeaderOptionLi>
         </ul>
     )
 }
