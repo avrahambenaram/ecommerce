@@ -1,16 +1,17 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { ProductItemSkeleton } from '../atoms/ProductItemSkeleton';
 
 export interface ProductItemProps {
   product: Product;
-  onClick?: (item: Product) => any;
+  href: string;
 }
 
-export function ProductItem({ product, onClick }: ProductItemProps) {
+export function ProductItem({ product, href }: ProductItemProps) {
   return (
-    <button
-      onClick={() => onClick ? onClick(product) : null}
+    <Link
+      href={href}
     >
       <ProductItemSkeleton>
         <Image
@@ -23,6 +24,6 @@ export function ProductItem({ product, onClick }: ProductItemProps) {
           <p>R$ {product.price.toString().replace('.', ',')}</p>
         </div>
       </ProductItemSkeleton>
-    </button>
+    </Link>
   )
 }

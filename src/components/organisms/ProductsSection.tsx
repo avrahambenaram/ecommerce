@@ -1,11 +1,11 @@
-import { Products, ProductsProps } from './Products';
+import { ProductsList, ProductsListProps } from './ProductsList';
 
 export interface ProductsSectionProps {
   title: string;
-  products: ProductsProps;
+  productsList: ProductsListProps;
 }
 
-export function ProductsSection({ title, products }: ProductsSectionProps) {
+export function ProductsSection({ title, productsList }: ProductsSectionProps) {
   return (
     <div>
       <div
@@ -13,8 +13,8 @@ export function ProductsSection({ title, products }: ProductsSectionProps) {
       >
         <h3 className='text-xl'>{title}</h3>
       </div>
-      <Products
-        {...products}
+      <ProductsList
+        {...productsList}
       />
     </div>
   )

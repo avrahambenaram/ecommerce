@@ -1,4 +1,4 @@
-import { ProductsSkeleton } from './ProductsSkeleton';
+import { ProductsListSkeleton } from './ProductsSkeleton';
 
 export interface ProductsSectionSkeletonProps {
   count: number;
@@ -12,7 +12,7 @@ export function ProductsSectionSkeleton({ count }: ProductsSectionSkeletonProps)
       >
         <div className='w-96 h-6 bg-white'></div>
       </div>
-      <ProductsSkeleton
+      <ProductsListSkeleton
         count={count}
       />
     </div>

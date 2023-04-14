@@ -1,11 +1,11 @@
 import { ProductItemSkeleton } from '../atoms/ProductItemSkeleton';
 import { ProductsWrapper } from '../atoms/ProductsWrapper';
 
-export interface ProductsSkeletonProps {
+export interface ProductsListSkeletonProps {
   count: number;
 }
 
-export function ProductsSkeleton({ count }: ProductsSkeletonProps) {
+export function ProductsListSkeleton({ count }: ProductsListSkeletonProps) {
   return (
     <ProductsWrapper>
       {Array.from(new Array(count)).map((_, index) => (

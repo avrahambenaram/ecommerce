@@ -51,13 +51,9 @@ export default function Product({ product }: ProductProps) {
       product={product}
       sections={[{
         title: 'Itens similares',
-        products: {
+        productsList: {
           products: sectionProducts,
-          onClickProduct(item) {
-            Router.push({
-              pathname: `product/${item.id}`
-            })
-          },
+          hrefProducts: sectionProducts.map(sectionProduct => `http://localhost:3000/product/${sectionProduct.id}`)
         }
       }]}
       productsState={{

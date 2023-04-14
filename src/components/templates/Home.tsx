@@ -2,14 +2,14 @@ import Head from 'next/head';
 
 import { Header } from '../organisms/Header';
 import { Banner, BannerProps } from '../organisms/Banner';
-import { Products, ProductsProps } from '../organisms/Products';
+import { ProductsList, ProductsListProps } from '../organisms/ProductsList';
 
 interface HomeTemplateProps {
     banner: BannerProps;
-    products: ProductsProps;
+    productsList: ProductsListProps;
 }
 
-export function HomeTemplate({ banner, products }: HomeTemplateProps) {
+export function HomeTemplate({ banner, productsList }: HomeTemplateProps) {
     return (
         <>
             <Head>
@@ -22,8 +22,8 @@ export function HomeTemplate({ banner, products }: HomeTemplateProps) {
                 <Banner
                     {...banner}
                 />
-                <Products
-                    {...products}
+                <ProductsList
+                    {...productsList}
                 />
             </main>
         </>
