@@ -7,6 +7,7 @@ export interface SignInTemplateProps {
   signInForm: SignInFormProps;
 }
 export function SignInTemplate({ signInForm }: SignInTemplateProps) {
+  console.log('Renderizou SignIn')
   return (
     <>
       <Head>

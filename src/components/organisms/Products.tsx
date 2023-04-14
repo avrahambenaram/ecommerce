@@ -1,3 +1,4 @@
+import { ProductsWrapper } from '../atoms/ProductsWrapper';
 import { ProductItem, ProductItemProps } from './ProductItem';
 
 export interface ProductsProps {
@@ -7,9 +8,7 @@ export interface ProductsProps {
 
 export function Products({ products, onClickProduct }: ProductsProps) {
   return (
-    <div
-      className='w-full p-3 flex flex-row gap-6 justify-center items-center flex-wrap'
-    >
+    <ProductsWrapper>
       {products.map((product) => (
         <ProductItem
           key={product.id}
@@ -17,6 +16,6 @@ export function Products({ products, onClickProduct }: ProductsProps) {
           onClick={onClickProduct}
         />
       ))}
-    </div>    
+    </ProductsWrapper>   
   )
 }

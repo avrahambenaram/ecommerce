@@ -2,12 +2,19 @@ import Head from 'next/head';
 
 import { Header } from '../organisms/Header';
 import { Product } from '../organisms/Product';
+import { ProductsSection, ProductsSectionProps } from '../organisms/ProductsSection';
+import { ProductsSectionSkeleton } from '../organisms/ProductsSectionSkeleton';
 
 export interface ProductTemplateProps {
   product: Product;
+  sections: ProductsSectionProps[];
+  productsState: {
+    loading: boolean;
+    count: number;
+  }
 }
 
-export function ProductTemplate({ product }: ProductTemplateProps) {
+export function ProductTemplate({ product, sections, productsState }: ProductTemplateProps) {
   return (
     <>
       <Head>
@@ -20,6 +27,18 @@ export function ProductTemplate({ product }: ProductTemplateProps) {
         <Product
           product={product}
         />
+        
+        {
+          productsState.loading
+          ? <ProductsSectionSkeleton count={productsState.count}/>
+          : sections.map(section => (
+            <ProductsSection
+              key={section.title}
+              {...section}
+            />
+          ))
+        }
+        
       </main>
     </>
   )
